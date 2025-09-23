@@ -1,0 +1,82 @@
+.cards{
+    display: inline-block;
+    transition: transform 0.2s;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 0.19em;
+    cursor: pointer;
+    min-width: 200px;
+    height: 300px;
+    z-index: 0;
+    border: 1px solid #edf0f1;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: #1c1c1c;
+}
+.cards:hover{
+    transform: scale(1.05);
+    z-index: 1000;
+    box-shadow: rgba(148, 137, 121, 0.5) 0px 54px 55px, rgba(223, 208, 184, 0.5) 0px -12px 30px, rgba(57, 62, 70, 0.20) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.cards img{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+.cards-overlay{
+    position: absolute;
+    padding: 0 1rem 1rem 1rem;
+    bottom: 0;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 100%;
+    background-image: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.cards-overlay:hover{
+    opacity: 1;
+}
+.cards-title{
+    font-weight: 900;
+    font-size: 1.2rem;
+    color: #edf0f1;
+    margin-bottom: 0.5rem;
+}
+.cards-runtime{
+    font-size: 0.9rem;
+    color: #edf0f1;
+    margin-bottom: 0.5rem;
+}
+.cards-rating{
+    font-size: 0.9rem;
+    color: #edf0f1;
+    margin-bottom: 0.5rem;
+    float: right;
+}
+.cards-description{
+    font-size: 0.8rem;
+    color: #edf0f1;
+    margin-bottom: 0.5rem;
+    font-style: normal;
+}
+@media (max-width: 768px){
+    .cards{
+        min-width: 120px;
+        height: 200px;
+    }
+    .cards img{
+        height: 200px;
+    }
+    .cards-overlay{
+        height: 190px;
+    }
+    .cards-title{
+        font-size: 1rem;
+    }
+    .cards-runtime, .cards-rating, .cards-description{
+        font-size: 0.7rem;
+    }
+}
