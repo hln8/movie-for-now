@@ -1,4 +1,4 @@
-.cards{
+.card{
     display: inline-block;
     transition: transform 0.2s;
     position: relative;
@@ -13,17 +13,17 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     background-color: #1c1c1c;
 }
-.cards:hover{
+.card:hover{
     transform: scale(1.05);
     z-index: 1000;
     box-shadow: rgba(148, 137, 121, 0.5) 0px 54px 55px, rgba(223, 208, 184, 0.5) 0px -12px 30px, rgba(57, 62, 70, 0.20) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
-.cards img{
+.card img{
     width: 100%;
     height: 300px;
     object-fit: cover;
 }
-.cards-overlay{
+.card-overlay{
     position: absolute;
     padding: 0 1rem 1rem 1rem;
     bottom: 0;
@@ -36,47 +36,47 @@
     opacity: 0;
     transition: opacity 0.3s ease;
 }
-.cards-overlay:hover{
+.card-overlay:hover{
     opacity: 1;
 }
-.cards-title{
+.card-title{
     font-weight: 900;
     font-size: 1.2rem;
     color: #edf0f1;
     margin-bottom: 0.5rem;
 }
-.cards-runtime{
+.card-runtime{
     font-size: 0.9rem;
     color: #edf0f1;
     margin-bottom: 0.5rem;
 }
-.cards-rating{
+.card-rating{
     font-size: 0.9rem;
     color: #edf0f1;
     margin-bottom: 0.5rem;
     float: right;
 }
-.cards-description{
+.card-description{
     font-size: 0.8rem;
     color: #edf0f1;
     margin-bottom: 0.5rem;
     font-style: normal;
 }
 @media (max-width: 768px){
-    .cards{
+    .card{
         min-width: 120px;
         height: 200px;
     }
-    .cards img{
+    .card img{
         height: 200px;
     }
-    .cards-overlay{
+    .card-overlay{
         height: 190px;
     }
-    .cards-title{
+    .card-title{
         font-size: 1rem;
     }
-    .cards-runtime, .cards-rating, .cards-description{
+    .card-runtime, .card-rating, .card-description{
         font-size: 0.7rem;
     }
 }

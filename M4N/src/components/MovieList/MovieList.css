@@ -33,3 +33,15 @@ font-family: 'Arial', sans-serif;
     padding: 0;
     box-sizing: border-box;
 }
+@media (max-width: 600px) {
+    .movie-list {
+        padding: 10px;
+    }
+    .list-title {
+        font-size: 1.5rem;
+        margin: 1.5rem;
+    }
+}
+    .list-cards {
+        gap: 5px;
+    }
