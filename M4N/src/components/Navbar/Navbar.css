@@ -283,9 +283,10 @@ button:hover .arrow:before {
     .nav-links {
         flex-direction: row;
         position: absolute;
+        margin-left: auto;
         top: 100%;
         left: 0;
-        width: 95%;
+        width: 100%;
         background: #393e4688;
         display: none;
         z-index: 100;
@@ -294,7 +295,7 @@ button:hover .arrow:before {
     .nav-links li {
         display: block;
         text-align: center;
-        padding-top: 30px;
+        padding-bottom: 15%;
         margin: 0;
         gap: 0;
     }
