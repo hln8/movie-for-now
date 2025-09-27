@@ -1,0 +1,126 @@
+/* ---------- GLOBAL STYLES ---------- */
+* {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Subtle shadow on all text for depth */
+}
+body {
+  zoom: 90%; /* Scale down the page slightly */
+}
+
+/* ---------- MAIN CONTAINER ---------- */
+.nominees-section {
+  padding: 20px; /* Space around the section */
+}
+
+/* ---------- YEAR TITLE ---------- */
+.year-title {
+  text-align: center;
+  font-size: 2.5rem; /* Large heading */
+  margin-bottom: 30px;
+  color: #f3e03b; /* Gold color */
+}
+
+/* ---------- CATEGORY BLOCK ---------- */
+.category-block {
+  margin-bottom: 50px; /* Space between categories */
+}
+
+/* ---------- CATEGORY TITLE ---------- */
+.category-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #f3e03b;
+  text-align: center;
+}
+
+/* ---------- NOMINEES GRID ---------- */
+.nominees-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Responsive columns */
+  gap: 20px; /* Space between cards */
+}
+
+/* ---------- NOMINEE CARD ---------- */
+.nominee-card {
+  background-color: #222; /* Dark background */
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  color: #fff;
+  transition: transform 0.2s, box-shadow 0.3s, border 0.3s;
+  border: 2px solid transparent;
+  width: 100%;
+  max-width: 250px;
+  position: relative;
+}
+
+.nominee-card:hover {
+  transform: scale(1.05); /* Slight zoom on hover */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* ---------- WINNER STYLES ---------- */
+.nominee-card.winner {
+  border: 3px solid #f3e03b;
+  box-shadow: 0 0 20px rgba(243, 224, 59, 0.8);
+  animation: glow 2s infinite alternate;
+  background: #f3e03b;
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 10px rgba(243, 224, 59, 0.5);
+  }
+  to {
+    box-shadow: 0 0 25px rgba(243, 224, 59, 1);
+  }
+}
+
+/* ---------- WINNER BADGE ---------- */
+.winner-badge {
+  background-color: #f3e03b;
+  color: #000;
+  font-weight: bold;
+  padding: 2px 8px;
+  border-radius: 3px;
+  font-size: 0.8rem;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+/* ---------- MOVIE POSTER ---------- */
+.nominee-poster {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+/* ---------- PEOPLE LIST ---------- */
+.people-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* ---------- PERSON CARD ---------- */
+.person {
+  text-align: center;
+  width: 70px;
+}
+
+.person-photo {
+  width: 70px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
+.person p {
+  font-size: 1rem;
+  color: white;
+  margin: 0;
+}
