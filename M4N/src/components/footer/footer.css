@@ -58,14 +58,7 @@
     text-decoration: underline; 
 }
 @media (max-width: 600px) {
-    .footer-content {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    .footer-right {
-        margin-top: 10px;
-    }
-    .footer-links li {
-        margin-left: 10px;
+    .footer{
+        display: none;
     }
 }
