@@ -9,6 +9,7 @@ const Navbar = () => {
     const [searchTerm, setSearchTerm] = useState('');
     const [results, setResults] = useState([]);
     const [loading, setLoading] = useState(false);
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
     const navigate = useNavigate();
 
     const toggleMenu = () => {
@@ -42,6 +43,28 @@ const Navbar = () => {
             navigate(`/movie/${movie.id}`, { state: { movie } });
         };
 
+        const handleAuthClick = async () => {
+        if (isLoggedIn) {
+            await supabase.auth.signOut();
+            setIsLoggedIn(false);
+        } else {
+            navigate('/login');
+        }
+    };
+
+    const handleSignUp = async (email, password) => {
+        const { user, error } = await supabase.auth.signUp({
+            email,
+            password
+        });
+
+        if (error) {
+            console.error('Error signing up:', error.message);
+        } else {
+            setIsLoggedIn(true);
+            navigate('/');
+        }
+    };
     return (
         <>
             <header className='navbar'>
@@ -71,9 +94,9 @@ const Navbar = () => {
                         <li><a href='/about'>About</a></li>
                     </ul>
                 </nav>
-                <a className='cta' href='/login'>
+                <a className='cta' href='/login' onClick={handleAuthClick}>
                     <button>
-                        sign in
+                        {isLoggedIn ? 'Log Out' : 'Sign In'}
                         <div className='arrow-wrapper'>
                             <div className='arrow'></div>
                         </div>
