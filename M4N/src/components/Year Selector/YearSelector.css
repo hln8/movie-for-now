@@ -1,0 +1,94 @@
+/* ---------- MAIN CONTAINER ---------- */
+.year-selector-container {
+    text-align: center;            /* Center align text and content */
+    margin: 40px auto;             /* Space around, centered horizontally */
+    color: #f3e03b;                /* Gold text theme */
+    max-width: 500px;              /* Keep content narrow for readability */
+    margin-top: 90px;              /* Extra space from top of page */
+}    
+
+/* ---------- TITLE (big header) ---------- */
+.year-selector-title {
+    font-size: 3rem;               /* Large, bold title */
+    font-weight: bold;
+    margin-bottom: 12px;
+    text-transform: uppercase;     /* All caps for dramatic effect */
+    letter-spacing: 1.5px;         /* Extra spacing between letters */
+    white-space: nowrap;           /* Prevent line breaks */
+}
+
+/* ---------- SUBTEXT / INSTRUCTIONS ---------- */
+.year-selector-instructions {
+    font-size: 1.5rem;             /* Slightly larger than normal text */
+    margin-bottom: 25px;
+    color: #ddd;                   /* Lighter gray to contrast title */
+}
+
+/* ---------- DROPDOWN SELECT ---------- */
+.year-selector {
+    padding: 14px 20px;
+    font-size: 1.3rem;
+    border: 2px solid #f3e03b;     /* Gold border */
+    border-radius: 10px;
+    background-color: #1a1a1a;     /* Dark background */
+    color: #f3e03b;                /* Gold text */
+    transition: all 0.3s ease;     /* Smooth hover/focus transition */
+    outline: none;
+    width: 100%;                   /* Full width dropdown */
+    margin-bottom: 20px;
+}
+
+/* Dropdown hover/focus glow effect */
+.year-selector:hover,
+.year-selector:focus {
+    border-color: #ffd700;
+    background-color: #2a2a2a;
+    box-shadow: 0 0 12px #f3e03b80; /* Subtle gold glow */
+}
+
+/* ---------- BUTTON ---------- */
+.view-nominees-button {
+  position: relative;
+  padding: 14px 28px;
+  border-radius: 50px;            /* Pill-shaped button */
+  border: none;
+  background: linear-gradient(90deg, #FFD700, #FFC107); /* Gold gradient */
+  color: #000;                    /* Black text for contrast */
+  font-weight: 800;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  cursor: pointer;
+  overflow: hidden;               /* Required for shine effect */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  margin-top: 6px;
+}
+
+.view-nominees-button:focus {
+  outline: none;
+}
+
+/* Shine overlay animation: starts hidden to the left */
+.view-nominees-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -75%;                     /* Start off-screen to the left */
+  width: 50%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.5);
+  transform: skewX(-25deg);       /* Skew for dynamic shine effect */
+  transition: left 0.5s ease;     /* Smooth transition for shine */
+}
+
+/* Move the shine across when hovering */
+.view-nominees-button:hover::before {
+  left: 125%;
+}
+
+/* Hover effect: lift + brighter gradient + stronger glow */
+.view-nominees-button:hover {
+  transform: translateY(-4px);
+  background: linear-gradient(90deg, #FFC107, #FFD700);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+}

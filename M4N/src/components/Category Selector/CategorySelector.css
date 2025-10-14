@@ -1,0 +1,116 @@
+/* ---------- MAIN CONTAINER ---------- */
+.category-selector-container {
+    text-align: center;
+    /* Center align text and content */
+    margin: 40px auto;
+    /* Center block with spacing */
+    color: #f3e03b;
+    /* Gold theme color */
+    max-width: 500px;
+    /* Keep layout narrow */
+}
+
+/* ---------- TITLE (header) ---------- */
+.category-selector-title {
+    font-size: 3rem;
+    /* Large bold title */
+    font-weight: bold;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    /* Dramatic all caps */
+    letter-spacing: 1.5px;
+    /* Add spacing between letters */
+    white-space: nowrap;
+    /* Prevent line breaks */
+}
+
+/* ---------- SUBTEXT / INSTRUCTIONS ---------- */
+.category-selector-instructions {
+    font-size: 1.5rem;
+    /* Slightly larger than body text */
+    margin-bottom: 25px;
+    color: #ddd;
+    /* Light gray for contrast */
+}
+
+/* ---------- DROPDOWN SELECT ---------- */
+.category-selector {
+    padding: 14px 20px;
+    font-size: 1.3rem;
+    border: 2px solid #f3e03b;
+    /* Gold border */
+    border-radius: 10px;
+    background-color: #1a1a1a;
+    /* Dark background */
+    color: #f3e03b;
+    /* Gold text */
+    transition: all 0.3s ease;
+    /* Smooth hover effect */
+    outline: none;
+    width: 100%;
+    /* Full width */
+    margin-bottom: 20px;
+}
+
+/* Hover/focus glow effect for dropdown */
+.category-selector:hover,
+.category-selector:focus {
+    border-color: #ffd700;
+    background-color: #2a2a2a;
+    box-shadow: 0 0 12px #f3e03b80;
+}
+
+/* ---------- BUTTON ---------- */
+.view-category-button {
+    position: relative;
+    padding: 14px 28px;
+    border-radius: 50px;
+    /* Pill-shaped button */
+    border: none;
+    background: linear-gradient(90deg, #ffd700, #ffc107);
+    /* Gold gradient */
+    color: #000;
+    /* Black text for contrast */
+    font-weight: 800;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    cursor: pointer;
+    overflow: hidden;
+    /* Needed for shine overlay */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    margin-top: 6px;
+}
+
+.view-category-button:focus {
+    outline: none;
+}
+
+/* Shine overlay animation: same as year selector */
+.view-category-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -75%;
+    /* Start hidden on left */
+    width: 50%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.5);
+    transform: skewX(-25deg);
+    /* Dynamic angled shine */
+    transition: left 0.5s ease;
+    /* Smooth shine slide */
+}
+
+/* Hover: shine moves across button */
+.view-category-button:hover::before {
+    left: 125%;
+    /* Move shine to right */
+}
+
+/* Hover effect: lift button, brighter gradient, stronger glow */
+.view-category-button:hover {
+    transform: translateY(-4px);
+    background: linear-gradient(90deg, #ffc107, #ffd700);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+}
