@@ -1,6 +1,6 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
-import AwardsPage from "./pages/AwardsPage.jsx";
+import AwardsPage from "./pages/Awards Page/AwardsPage.jsx";
 
 // Select the root element in the HTML
 const root = createRoot(document.getElementById("root"));

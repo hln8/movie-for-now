@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import HeroSection from "../components/HeroSection.jsx";
-import YearSelector from "../components/YearSelector";
-import CategorySelector from "../components/CategorySelector.jsx";
-import NomineesList from "../components/NomineesList.jsx";
+import HeroSection from "../../components/Hero Section/HeroSection.jsx";
+import YearSelector from "../../components/Year Selector/YearSelector.jsx";
+import CategorySelector from "../../components/Category Selector/CategorySelector.jsx";
+import NomineesList from "../../components/Nominees List/NomineesList.jsx";
 
 export default function AwardsPage() {
   // State variables

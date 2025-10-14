@@ -1,5 +1,5 @@
 import React from "react";
-import oscarsImage from "../assets/oscars2.png";
+import oscarsImage from "../../assets/oscars2.png";
 import "./HeroSection.css"
 
 const HeroSection = () => {
