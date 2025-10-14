@@ -1,9 +1,19 @@
-import React from "react";
-import { createRoot } from "react-dom/client";
-import AwardsPage from "./pages/Awards Page/AwardsPage.jsx";
+import './App.css'
+import Navbar from './components/Navbar/Navbar'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './pages/home/Home';
+import Footer from './components/footer/footer';
+import NotFound from './components/404 page/notFound';
 
-// Select the root element in the HTML
-const root = createRoot(document.getElementById("root"));
-
-// Render the main AwardsPage component
-root.render(<AwardsPage />);
+function App() {
+  return (
+    <BrowserRouter>
+      <Navbar />
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='*' element={<NotFound />} />
+      </Routes>
+      <Footer />
+    </BrowserRouter>
+  )
+}

@@ -1,0 +1,29 @@
+.container-404{
+    width: 80%;
+    max-width: 1400px;
+    margin: 0 auto;
+    height: auto;
+    position: relative;
+    margin-top: 8%;
+}
+.content-404{
+    float: right;
+    max-width: 45%;
+    color: #dfd0b8;
+    font-weight: 300;
+    font-size: 18px;
+    padding-bottom: 40px;
+    line-height: 28px;
+}
+.content-404 h1{
+    margin: 0;
+    font-weight: 400;
+    font-size: 42px;
+    margin-bottom: 40px;
+    line-height: normal;
+}
+@media (max-width: 768px){
+        .container-404 { width: 90%; height: auto; margin-top: 40px; top: 0%; }
+        .content-404 { float: none; width: 90%; max-width: 90%; margin: 0 auto; margin-top: 30px; text-align: justify; }
+        .content-404 h1 { text-align: left; }
+}
