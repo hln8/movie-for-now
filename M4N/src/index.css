@@ -4,9 +4,18 @@
     box-sizing: border-box;
 }
 body{
-    width: 100vw;
+    width: 110vw;
     min-height: 100vh;
         background: #222831;
         margin: 0;
         font-family: 'Arial', sans-serif;
+    }
+    @media (max-width: 768px){
+        body{
+        width: 111vw;
+        min-height: 100vh;
+        background: #222831;
+        margin: 0;
+        font-family: 'Arial', sans-serif;
+        }
     }

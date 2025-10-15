@@ -89,9 +89,9 @@ const Navbar = () => {
                     </div>
                     <ul className={`nav-links ${isOpen ? 'active' : ''}`}>
                         <li><a href='/'>Home</a></li>
-                        <li><a href='/awards'>Awards</a></li>
-                        <li><a href='/contact'>Contact</a></li>
-                        <li><a href='/about'>About</a></li>
+                        <li><a href='awards'>Awards</a></li>
+                        <li><a href='contact'>Contact</a></li>
+                        <li><a href='about'>About</a></li>
                     </ul>
                 </nav>
                 <a className='cta' href='/login' onClick={handleAuthClick}>

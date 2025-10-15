@@ -4,7 +4,7 @@ import YearSelector from "../../components/Year Selector/YearSelector.jsx";
 import CategorySelector from "../../components/Category Selector/CategorySelector.jsx";
 import NomineesList from "../../components/Nominees List/NomineesList.jsx";
 
-export default function AwardsPage() {
+function AwardsPage() {
   // State variables
   const [selectedYear, setSelectedYear] = useState(""); // Currently selected year
   const [nominees, setNominees] = useState([]); // Nominees for the selected year
@@ -147,3 +147,4 @@ export default function AwardsPage() {
     </div>
   );
 }
+export default AwardsPage
