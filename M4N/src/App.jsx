@@ -8,6 +8,7 @@ import { AuthProvider } from './context/AuthContext';
 import MovieDetails from './pages/MovieDetails/MovieDetails';
 import SignIn from './pages/SignUp-In/SignIn';
 import SignUp from './pages/SignUp-In/SignUp';
+import Favorites from './pages/Favorites/Favorites';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path='/signUp' element={<SignUp />} />
           <Route path='/awards' element={<AwardsPage />} />
           <Route path='*' element={<NotFound />} />
+          <Route path='favorites' element={<Favorites />} />
         </Routes>
         <Footer />
       </BrowserRouter>
