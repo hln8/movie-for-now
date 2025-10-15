@@ -7,6 +7,7 @@ import AwardsPage from './pages/Awards Page/AwardsPage';
 import { AuthProvider } from './context/AuthContext';
 import MovieDetails from './pages/MovieDetails/MovieDetails';
 import SignIn from './pages/SignUp-In/SignIn';
+import SignUp from './pages/SignUp-In/SignUp';
 
 function App() {
   return (
@@ -16,7 +17,8 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path="/movie/:id" element={<MovieDetails />}  />
-          <Route path="/signIn" element={<SignIn />} />
+          <Route path='/signIn' element={<SignIn />} />
+          <Route path='/signUp' element={<SignUp />} />
           <Route path='/awards' element={<AwardsPage />} />
           <Route path='*' element={<NotFound />} />
         </Routes>
