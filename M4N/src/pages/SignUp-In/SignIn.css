@@ -1,0 +1,188 @@
+
+.auth-form {
+  background: #393e46;
+  padding: 30px 25px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  width: 380px;
+  text-align: center;
+}
+
+.auth-form h2 {
+  margin-bottom: 20px;
+  color: #DFD0B8;
+}
+
+.auth-form input {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  font-size: 17px;
+  padding-left: 20px;
+  border: 1px solid lightgrey;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+
+.auth-form button {
+  width: 100%;
+  padding: 10px;
+  background: #DFD0B8;
+  color: #393e46;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-left: 1px;
+    transition: all 0.3s ease;
+
+}
+
+.auth-form button:hover {
+  background: #DFD0B8;
+  transform: scale(1.08);
+}
+.auth-form button {
+  transition: all 0.3s ease;
+}
+
+.auth-form button.loading {
+  position: relative;
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+.auth-form button.loading::after {
+  content: "";
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  border: 2px solid #fff;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: translateY(-50%) rotate(360deg);
+  }
+}
+.auth-message {
+  margin-top: 12px;
+  color: #DFD0B8;
+  font-size: 14px;
+}
+
+.switch-auth {
+  margin-top: 12px;
+  font-size: 14px;
+  color: #f5eaea;
+}
+
+.switch-auth .link {
+  color: #DFD0B8;
+  cursor: pointer;
+}
+
+.switch-auth .link:hover {
+  text-decoration: underline;
+}
+/*  Password Reset Modal  */
+
+.modal {
+  background: #393e46;
+  color: #DFD0B8;
+  padding: 25px;
+  border-radius: 10px;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+    flex: 1;
+  padding: 8px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+
+.modal-buttons button {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  color: #ffffff;
+  font-weight: 500;
+  
+}
+
+
+.forgot-password-text {
+  color: #DFD0B8;
+  cursor: pointer;
+  text-decoration: underline;
+  font-size: 0.9rem;
+  margin-top: 10px;
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+
+.modal input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+
+
+
+
+
+.signup-text{
+  color: #ffffff;
+}
+.signup-link{
+color: #DFD0B8;
+cursor: pointer;
+
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+.auth-container {
+  animation: fadeInPage 0.9s ease-out forwards;
+}
+
+@keyframes fadeInPage {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

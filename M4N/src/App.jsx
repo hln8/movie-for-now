@@ -6,6 +6,7 @@ import NotFound from './components/404 page/notFound';
 import AwardsPage from './pages/Awards Page/AwardsPage';
 import { AuthProvider } from './context/AuthContext';
 import MovieDetails from './pages/MovieDetails/MovieDetails';
+import SignIn from './pages/SignUp-In/SignIn';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path="/movie/:id" element={<MovieDetails />}  />
+          <Route path="/signIn" element={<SignIn />} />
           <Route path='/awards' element={<AwardsPage />} />
           <Route path='*' element={<NotFound />} />
         </Routes>
