@@ -80,6 +80,7 @@
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
     transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
     margin-top: 6px;
+    margin: 6px auto 0;
 }
 
 .view-category-button:focus {
@@ -113,4 +114,87 @@
     transform: translateY(-4px);
     background: linear-gradient(90deg, #ffc107, #ffd700);
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+}
+
+
+/* ✅ RESPONSIVENESS — TABLET AND MOBILE VIEWS   */
+
+/* For Medium Screens (Tablets and Small Laptops) */
+@media (max-width: 1024px) {
+    .category-selector-container {
+        max-width: 400px;
+        margin-top: 70px;
+    }
+
+    .category-selector-title {
+        font-size: 2.5rem;
+    }
+
+    .category-selector-instructions {
+        font-size: 1.3rem;
+    }
+
+    .category-selector {
+        font-size: 1.1rem;
+        padding: 12px 18px;
+    }
+
+    .view-category-button{
+        font-size: 1.1em;
+        padding: 12px 24px;
+    }
+}
+
+/* Small screens (phones and compact tablets) */
+@media (max-width: 768px) {
+    .category-selector-container {
+        max-width: 320px;
+        margin-top: 60px;
+        padding: 0 15px;
+    }
+
+    .category-selector-title {
+        font-size: 2rem;
+    }
+    
+    .category-selector-instructions{
+        font-size: 1.1rem;
+    }
+
+    .category-selector {
+        font-size: 1rem;
+        padding: 10px 16px;
+    }
+
+    .view-category-button{
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+}
+
+/* Extra small screens (phones below 480px) */
+@media (max-width: 480px) {
+    .category-selector-container {
+        max-width: 280px;
+        margin-top: 50px;
+        padding: 0 10px;
+    }
+
+    .category-selector-title{
+        font-size: 1.6rem;
+    }
+
+    .category-selector-instructions {
+        font-size: 1rem;
+    }
+
+    .category-selector{
+        font-size: 0.95rem;
+        padding: 8px 14px;
+    }
+
+    .view-category-button {
+        font-size: 0.85rem;
+        padding: 8px 18px;
+    }
 }

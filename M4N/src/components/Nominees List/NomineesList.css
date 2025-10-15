@@ -2,9 +2,6 @@
 * {
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Subtle shadow on all text for depth */
 }
-body {
-  zoom: 90%; /* Scale down the page slightly */
-}
 
 /* ---------- MAIN CONTAINER ---------- */
 .nominees-section {
@@ -35,7 +32,10 @@ body {
 /* ---------- NOMINEES GRID ---------- */
 .nominees-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Responsive columns */
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(220px, 1fr)
+  ); /* Responsive columns */
   gap: 20px; /* Space between cards */
 }
 
@@ -123,4 +123,112 @@ body {
   font-size: 1rem;
   color: white;
   margin: 0;
+}
+
+/* ✅ RESPONSIVENESS — TABLET AND MOBILE VIEWS   */
+
+/* For Medium Screens (Tablets and Small Laptops) */
+@media (max-width: 1024px) {
+  .year-title {
+    font-size: 2.2rem;
+  }
+
+  .category-title {
+    font-size: 1.8rem;
+  }
+
+  .nominees-grid {
+    gap: 15px;
+  }
+
+  .nominee-card {
+    max-width: 220px;
+    padding: 8px;
+  }
+
+  .person {
+    width: 60px;
+  }
+
+  .person-photo {
+    width: 60px;
+    height: 90px;
+  }
+}
+
+/* Small screens (phones and compact tablets) */
+@media (max-width: 768px) {
+  .year-title {
+    font-size: 1.8rem;
+  }
+
+  .category-title {
+    font-size: 1.5rem;
+  }
+
+  .nominees-grid {
+    gap: 12px;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+
+  .nominee-card {
+    max-width: 180px;
+    padding: 6px;
+  }
+
+  .person {
+    width: 50px;
+  }
+
+  .person-photo {
+    width: 50px;
+    height: 75px;
+  }
+}
+
+/* Extra small screens (phones below 480px) */
+@media (max-width: 480px) {
+  body {
+    zoom: 100%;
+  }
+  .year-title {
+    font-size: 1.5rem;
+  }
+
+  .category-title {
+    font-size: 1.3rem;
+  }
+
+  .nominees-grid {
+    gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .nominee-card {
+    max-width: 120px;
+    padding: 5px;
+  }
+
+  .person {
+    width: 45px;
+  }
+
+  .person-photo {
+    width: 45px;
+    height: 68px;
+  }
+}
+
+/* ✅ DESKTOP ZOOM ONLY — 90% FOR LARGE SCREENS */
+@media (min-width: 1025px) {
+  body {
+    zoom: 90%;
+  }
+}
+
+/* ✅ Small screens: reset zoom to normal */
+@media (max-width: 1024px) {
+  body {
+    zoom: 100%;
+  }
 }

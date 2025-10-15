@@ -43,7 +43,7 @@ body {
     border-radius: 15px;
     backdrop-filter: blur(6px);  /* Frosted-glass look */
     animation: glow 2s infinite alternate;
-    transition: box-shadow 0.4 ease;
+    transition: box-shadow 0.4s ease;
 }
 
 
@@ -103,5 +103,45 @@ body {
     100% {
     box-shadow: 0 0 20px rgba(255, 215, 0, 0.2),
                 0 0 40px rgba(255, 215, 0, 0.15);
+    }
+}
+
+
+/* ✅ RESPONSIVENESS — TABLET AND MOBILE VIEWS   */
+
+/* For Medium Screens (Tablets and Small Laptops) */
+@media (max-width: 1024px) {
+    .hero-text {
+        padding: 30px 45px;
+    }
+    
+    .hero-text h1 {
+        font-size: 3rem;
+    }
+
+    .hero-text p {
+        font-size: 1.3rem;
+    }
+}
+
+/* Extra Small Screens (Phones Below 480px)*/
+@media (max-width: 480px) {
+    .container {
+        height: auto;
+        padding: 40px 10px;
+    }
+
+    .hero-text {
+        padding: 20px 25px;
+        border-radius: 10px;
+    }
+
+    .hero-text h1 {
+        font-size: 1.8rem;
+        line-height: 1.3;
+    }
+
+    .hero-text p {
+        font-size: 1rem;
     }
 }
