@@ -5,49 +5,56 @@ import { useEffect, useState } from 'react';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 
-const Home = () => {
+const API_KEY = import.meta.env.VITE_TMDB_API_KEY; // API key from environment variables
 
-    const [ popularMovies, setPopularMovies ] = useState([]);
-    const [ topRatedMovies, setTopRatedMovies ] = useState([]);
+const Home = () => {
+    // State hooks for popular and top-rated movies
+    const [popularMovies, setPopularMovies] = useState([]);
+    const [topRatedMovies, setTopRatedMovies] = useState([]);
 
     useEffect(() => {
-        fetch(`https://api.themoviedb.org/3/movie/popular?api_key=ebe99bbe7c3aadee21ea5ad3e5ff9bbf&language=en-US`)
-        .then(res => res.json())
-        .then(data => setPopularMovies(data.results));
-        fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=ebe99bbe7c3aadee21ea5ad3e5ff9bbf&language=en-US`)
-        .then(res => res.json())
-        .then(data => setTopRatedMovies(data.results));
+        // Fetch popular movies from the API
+        fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US`)
+            .then(res => res.json())
+            .then(data => setPopularMovies(data.results)); // Set popular movies state
+
+        // Fetch top-rated movies from the API
+        fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=${API_KEY}&language=en-US`)
+            .then(res => res.json())
+            .then(data => setTopRatedMovies(data.results)); // Set top-rated movies state
     }, []);
 
     return (
         <>
             <div className="poster">
                 <Carousel 
-                showThumbs={false}
-                autoPlay={true}
-                transitionTime={3}
-                infiniteLoop={true}
-                showStatus={false}
+                    showThumbs={false} // Hide thumbnails
+                    autoPlay={true} // Enable autoplay
+                    transitionTime={3} // Transition time between slides
+                    infiniteLoop={true} // Infinite looping of slides
+                    showStatus={false} // Hide status
                 >
                     {
                         popularMovies.map(movie => (
-                            <Link style={{ textDecoration: 'none', color: 'white' }} to={`/movie/${movie.id}`}>
+                            <Link key={movie.id} style={{ textDecoration: 'none', color: 'white' }} to={`/movie/${movie.id}`}>
                                 <div className="poster-image">
-                                    <img src={`https://image.tmdb.org/t/p/original${movie && movie.backdrop_path}`} alt={movie.title} />
+                                    <img src={`https://image.tmdb.org/t/p/original${movie && movie.backdrop_path}`} alt={movie.title} /> {/* Movie backdrop image */}
                                 </div>
-                                <div className="poster-overlay">
-                                    <div className="poster-title">{movie ? movie.title : ""}</div>
+                                <div className="poster-overlay"> {/* Overlay for movie details */}
+                                    <div className="poster-title">{movie ? movie.title : ""}</div> {/* Movie title */}
                                     <div className="poster-runtime">
-                                        {movie ? movie.release_date : ""}
-                                        <span className="poster-rating">{movie ? movie.vote_average : ""} <i className="fas fa-star" /></span>
+                                        {movie ? movie.release_date : ""} {/* Release date */}
+                                        <span className="poster-rating">
+                                            {movie ? movie.vote_average : ""} <i className="fas fa-star" /> {/* Movie rating */}
+                                        </span>
                                     </div>
-                                    <div className="poster-description">{movie ? movie.overview : ""}</div>
+                                    <div className="poster-description">{movie ? movie.overview : ""}</div> {/* Movie description */}
                                 </div>
                             </Link>
                         ))  
                     }
                 </Carousel>
-                <MovieList />
+                <MovieList /> {/* Render the MovieList component */}
             </div>
         </>
     )

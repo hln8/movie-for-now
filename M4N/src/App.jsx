@@ -21,8 +21,8 @@ function App() {
           <Route path='/signIn' element={<SignIn />} />
           <Route path='/signUp' element={<SignUp />} />
           <Route path='/awards' element={<AwardsPage />} />
+          <Route path='/favorites' element={<Favorites />} />
           <Route path='*' element={<NotFound />} />
-          <Route path='favorites' element={<Favorites />} />
         </Routes>
         <Footer />
       </BrowserRouter>

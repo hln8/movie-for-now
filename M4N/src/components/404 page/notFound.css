@@ -1,3 +1,4 @@
+/* 404 Page Container */
 .container-404{
     width: 80%;
     max-width: 1400px;
@@ -6,6 +7,7 @@
     position: relative;
     margin-top: 8%;
 }
+/* 404 Page Content */
 .content-404{
     float: right;
     max-width: 45%;
@@ -15,6 +17,7 @@
     padding-bottom: 40px;
     line-height: 28px;
 }
+/* Heading Styles */
 .content-404 h1{
     margin: 0;
     font-weight: 400;
@@ -22,6 +25,7 @@
     margin-bottom: 40px;
     line-height: normal;
 }
+/* Responsive Design for Small Screens */
 @media (max-width: 768px){
         .container-404 { width: 90%; height: auto; margin-top: 40px; top: 0%; }
         .content-404 { float: none; width: 90%; max-width: 90%; margin: 0 auto; margin-top: 30px; text-align: justify; }
