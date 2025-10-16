@@ -1,8 +1,10 @@
 import './Navbar.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import {useNavigate} from 'react-router-dom';
 import SearchIcon from '@mui/icons-material/Search';
 import m4nLogo from '../../assets/M4N logo.png';
+import { supabase } from '../../supabaseClient';
+import React from 'react';
 
 const Navbar = () => {
     // State hooks for managing navbar features
@@ -50,7 +52,8 @@ const Navbar = () => {
     };
 
     // Handle authentication click (sign in or out)
-    const handleAuthClick = async () => {
+    const handleAuthClick = async (e) => {
+        e.preventDefault();
         if (isLoggedIn) {
             await supabase.auth.signOut(); // Sign out user
             setIsLoggedIn(false); // Update login state
@@ -73,6 +76,28 @@ const Navbar = () => {
             navigate('/'); // Navigate to home
         }
     };
+
+    useEffect(() => {
+    // التحقق من جلسة المستخدم عند تحميل المكون
+    const checkUser = async () => {
+        const { data } = await supabase.auth.getSession();
+        if (data.session) {
+            setIsLoggedIn(true);
+        }
+    };
+
+    checkUser();
+
+    // الاشتراك في تغيّر حالة المستخدم (تسجيل دخول / خروج)
+    const { data: listener } = supabase.auth.onAuthStateChange((event, session) => {
+        setIsLoggedIn(!!session);
+    });
+
+    // تنظيف الاشتراك عند إلغاء المكون
+    return () => {
+        listener.subscription.unsubscribe();
+    };
+}, []);
 
     return (
         <>
