@@ -1,0 +1,32 @@
+.favorites-container{
+  background-color: #393e46;
+}
+
+
+.list-cards button{
+    transition: all 0.3s ease;
+    cursor: pointer;
+    padding-left: 10px;
+    margin: 1px   auto;
+    transition: all 0.3s ease;
+}
+.list-cards button:hover{
+  transform: scale(1.2);
+  background-color:#8d1d01;
+}
+.fav-message {
+  text-align: center;
+  margin: 50px;
+  padding: 200px;
+  font-size: 120px;
+  color: #edf0f1;
+  max-width: max-content;
+}
+@media (max-width: 900px){
+  .fav-message{
+    font-size: 40px;
+    text-align: left;
+    margin: 1px;
+    padding: 10px;
+  }
+}
