@@ -32,7 +32,7 @@ const Favorites = () => {
         const detailedFavs = await Promise.all(
           favs.map(async (fav) => {
             const res = await fetch(
-             ` https://api.themoviedb.org/3/movie/${fav.movie_id}?api_key=${API_KEY}&language=en-US`
+              ` https://api.themoviedb.org/3/movie/${fav.movie_id}?api_key=${API_KEY}&language=en-US`
             );
             const movieDetails = await res.json();
             return { ...movieDetails, favId: fav.id };
@@ -57,11 +57,17 @@ const Favorites = () => {
   };
 
   if (loading)
-    return <h2 className="fav-message"> Loading your favorites...</h2>;
+    return   <div className="loader">
+      <div className="loader-dots">
+        <div className="loader-dot"></div>
+        <div className="loader-dot"></div>
+        <div className="loader-dot"></div>
+      </div>
+    </div>;
   if (!user)
     return <h2 className="fav-message"> Please log in to view your favorites</h2>;
   if (favorites.length === 0)
-    return <h2 className="fav-message"> No movies added to favorites yet</h2>;
+    return <h2 className="fav-message"> No movies added to Your favorites yet</h2>;
 
   return (
     <div className="favorites-container">
@@ -76,7 +82,7 @@ const Favorites = () => {
             >
               Remove
             </button>
-         
+
           </div>
         ))}
       </div>

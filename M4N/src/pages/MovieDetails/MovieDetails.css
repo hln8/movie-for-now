@@ -12,10 +12,8 @@
     background-color: #393e46;
   max-width: max-content;
   color: #DFD0B8;
-  margin: 40px auto;
   padding: 20px 30px;
-  border-radius: 12px;
-  box-shadow: rgba(0,0,0,0.7) 0px 4px 10px;
+
 }
 
 /*  Movie Header (Poster + Info) */

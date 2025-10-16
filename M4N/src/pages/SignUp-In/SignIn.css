@@ -1,56 +1,61 @@
+/*  Container & Page Animation  */
+.auth-container {
+  animation: fadeInPage 0.9s ease-out forwards;
+}
 
+/*  Fade-in animation for the whole page */
+@keyframes fadeInPage {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Sign In Form Styling  */
 .auth-form {
   background: #393e46;
-  padding: 30px 25px;
-  border-radius: 16px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-  width: 380px;
-  text-align: center;
+  padding: 40px 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.5s ease;
+  position: relative;
 }
 
-.auth-form h2 {
-  margin-bottom: 20px;
-  color: #DFD0B8;
-}
+/*  Input fields */
 
-.auth-form input {
-  height: 100%;
-  width: 100%;
-  outline: none;
-  font-size: 17px;
-  padding-left: 20px;
-  border: 1px solid lightgrey;
-  border-radius: 25px;
-  transition: all 0.3s ease;
-}
-
+/*  Buttons inside the form */
 .auth-form button {
-  width: 100%;
-  padding: 10px;
   background: #DFD0B8;
-  color: #393e46;
-  border-radius: 25px;
+    width: 100%;
+  color: #000000;
+  border: none;
+  border-radius: 18px;
   cursor: pointer;
-  font-size: 16px;
-  margin-left: 1px;
-    transition: all 0.3s ease;
-
+  transition: 0.3s;
 }
 
+/*  Button hover effect */
 .auth-form button:hover {
-  background: #DFD0B8;
   transform: scale(1.08);
 }
-.auth-form button {
-  transition: all 0.3s ease;
-}
 
+/*  Loading button state */
 .auth-form button.loading {
   position: relative;
   opacity: 0.8;
   pointer-events: none;
 }
 
+/*  Loading spinner inside button */
 .auth-form button.loading::after {
   content: "";
   position: absolute;
@@ -70,12 +75,27 @@
     transform: translateY(-50%) rotate(360deg);
   }
 }
+
+/* Forgot password text */
+.forgot-password-text {
+  margin: 10px;
+  color: #DFD0B8;
+  cursor: pointer;
+  text-decoration: underline;
+  font-size: 0.9rem;
+  margin-top: 10px;
+}
+.forgot-password-text:hover{
+  color: #fafafa;
+}
+/*  Error or info messages inside form */
 .auth-message {
   margin-top: 12px;
   color: #DFD0B8;
   font-size: 14px;
 }
 
+/*  Switch auth link (Sign Up link) */
 .switch-auth {
   margin-top: 12px;
   font-size: 14px;
@@ -87,102 +107,141 @@
   cursor: pointer;
 }
 
-.switch-auth .link:hover {
-  text-decoration: underline;
-}
-/*  Password Reset Modal  */
-
-.modal {
-  background: #393e46;
-  color: #DFD0B8;
-  padding: 25px;
-  border-radius: 10px;
-  width: 300px;
-  text-align: center;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-}
-
-
-
-.modal-buttons {
-  display: flex;
-  justify-content: space-between;
-    flex: 1;
-  padding: 8px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: 500;
-}
-
-
-.modal-buttons button {
-  flex: 1;
-  padding: 8px;
-  border: none;
-  border-radius: 25px;
-  cursor: pointer;
+.signup-text {
   color: #ffffff;
-  font-weight: 500;
-  
 }
 
-
-.forgot-password-text {
+.signup-link {
   color: #DFD0B8;
   cursor: pointer;
   text-decoration: underline;
-  font-size: 0.9rem;
-  margin-top: 10px;
 }
 
+.signup-link:hover {
+  color: #ffffff;
+  cursor: pointer;
+}
+
+/*  Google Sign In Button  */
+.google-btn {
+  margin: 10px 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px;
+  border-radius: 25px;
+  background-color: #DFD0B8;
+  color: #393e46;
+  font-weight: 500;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.google-btn:hover {
+  transform: scale(1.05);
+  background-color: #c9b99b;
+}
+
+.google-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+
+/*  Password Reset Modal */
+
+
+/*  Overlay background behind modal */
 .modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
   animation: fadeIn 0.3s ease-in-out;
 }
 
+/*  Modal box container */
+.modal {
+  background: #393e46;
+  color: #DFD0B8;
+  padding: 30px 25px;
+  border-radius: 20px;
+  width: 320px;
+  text-align: center;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+  animation: fadeIn 0.3s ease;
+}
 
+/*  Modal header */
+.modal h3 {
+  margin-bottom: 10px;
+  font-size: 25px;
+}
+
+/*  Instructions text inside modal */
+.modal p {
+  font-size: 15px;
+  line-height: 1.5;
+  margin-bottom: 15px;
+
+}
+
+/* Input field inside modal */
 .modal input {
   width: 100%;
   padding: 10px;
-  margin: 10px 0;
-  border-radius: 6px;
+  margin: 12px 0 18px 0;
+  border-radius: 18px;
   border: 1px solid #ccc;
+  outline: none;
+  font-size: 15px;
+  text-align: center;
 }
 
-
-
-
-
-
-.signup-text{
-  color: #ffffff;
+/*  Modal buttons container */
+.modal-buttons {
+  display: flex;
 }
-.signup-link{
-color: #DFD0B8;
-cursor: pointer;
 
+/*  Buttons inside modal */
+.modal-buttons button {
+
+  padding: 10px;
+  border-radius: 25px;
+  background-color: #DFD0B8;
+  color: #000000;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
 }
+
+.modal-buttons button:hover {
+  transform: scale(0.95);
+  background-color: #fafafa;
+}
+
+/* Message box inside modal */
+.modal .auth-message {
+  color: #ffb2b2;
+  font-size: 14px;
+  text-align: center;
+}
+
+/*  Fade-in animation for modal */
 @keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.9); }
-  to { opacity: 1; transform: scale(1); }
-}
-.auth-container {
-  animation: fadeInPage 0.9s ease-out forwards;
-}
-
-@keyframes fadeInPage {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: scale(0.9);
   }
+
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: scale(1);
   }
 }
