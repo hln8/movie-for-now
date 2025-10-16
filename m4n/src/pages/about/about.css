@@ -3,7 +3,7 @@
     color: #DFD0B8;
     min-height: 100vh ;
     padding: 40px;
-    font-family: 'Arial',;
+    font-family: 'Arial';
 }
 .main-title{
    font-size: 2.5rem; 
@@ -36,23 +36,23 @@
     line-height: 1.6;
 }
 .team-list {
-    list-style-type: square;
     padding-left: 0px;
 }
 .team-list li {
+    user-select: none;
     list-style: none;
     margin: 8px 0;
     background: #393e46;
     border-radius: 8px;
     padding: 8px 12px;
     box-shadow: 0 2px rgba(0,0,0,0.3);
-     transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55), 
+     transition: transform 0.4s cubic-bezier(0, 0, 0, 1.55), 
               background 0.3s ease,
               box-shadow 0.3s ease;
 }
 .team-list li:hover {
     background: #948979;
-    transform: translateZ(12px) scale(1.08);
+    transform: translateZ(12px) scale(1.05);
     box-shadow: 0 6px 15px rgba(0,0,0,0.4);
 
 }

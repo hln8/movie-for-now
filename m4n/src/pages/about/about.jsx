@@ -13,14 +13,14 @@ function About(){
     <ul className='team-list'>
         <li>Majd Hisham</li>
         <li>Markb Hajam</li>
-        <li>Mohammed Al-Warith</li>
+        <li>Mohammed Al-wreeth</li>
         <li>Mohammed Saboor</li>
         <li>Naji Al-Lswas</li>
     </ul>
 </div>
 <div className='section-box'>
     <h2 className='section-title'>Technologies Used</h2>
-    <h1>REACT , Vite</h1>
+    <h2>REACT , Vite</h2>
 
 </div>
 
