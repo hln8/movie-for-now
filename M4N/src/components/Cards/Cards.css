@@ -6,6 +6,7 @@
     overflow: hidden;
     margin: 0.19em;
     cursor: pointer;
+    width: 0px;
     min-width: 200px;
     height: 300px;
     z-index: 0;
@@ -71,12 +72,12 @@
         height: 200px;
     }
     .card-overlay{
-        height: 190px;
+        height: 180px;
     }
     .card-title{
         font-size: 1rem;
     }
     .card-runtime, .card-rating, .card-description{
-        font-size: 0.7rem;
+        font-size: 0.5rem;
     }
 }

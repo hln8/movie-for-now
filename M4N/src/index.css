@@ -12,7 +12,7 @@ body{
     }
     @media (max-width: 768px){
         body{
-        width: 111vw;
+        width: 100vw;
         min-height: 100vh;
         background: #222831;
         margin: 0;
