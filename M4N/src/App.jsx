@@ -11,6 +11,7 @@ import SignUp from './pages/SignUp-In/SignUp';
 import Favorites from './pages/Favorites/Favorites';
 import ResetPassword from './pages/SignUp-In/reset-password';
 import About from './pages/about/about';
+import Contact from './pages/contact/contact';
 
 function App() {
 return (
@@ -27,6 +28,7 @@ return (
             <Route path='*' element={<NotFound />} />
             <Route path="/reset-password" element={<ResetPassword />} />
             <Route path='/about' element={<About />} />
+            <Route path='/contact' element={<Contact />} />
         </Routes>
         <Footer />
     </BrowserRouter>
