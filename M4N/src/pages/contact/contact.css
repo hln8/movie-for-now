@@ -1,0 +1,132 @@
+:root {
+    --bg-dark: #222831;
+    --bg-secondary: #393E46;
+    --highlight: #948979;
+    --text-light: #DFD0B8;
+}
+.contact-container {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 1.5s ease-in-out;
+    padding: 40px 20px;
+    box-sizing: border-box;
+}
+.contact-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.contact-header h1 {
+    font-size: 2.5rem;
+    color: var(--highlight);
+    margin-bottom: 10px;
+}
+.contact-header p {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+.contact-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    width: 100%;
+    max-width: 1000px;
+}
+.contact-form {
+    background-color: var(--bg-secondary);
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 450px;
+    transition: transform 0.3s ease;
+}
+.contact-form:hover {
+    transform: translateY(-5px);
+}
+.form-group {
+    margin-bottom: 15px;
+}
+input,
+textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: none;
+    border-radius: 8px;
+    background-color: #2f343b;
+    color: var(--text-light);
+    font-size: 1rem;
+    outline: none;
+}
+input::placeholder,
+textarea::placeholder {
+    color: #bcb4a4;
+}
+.send-btn {
+    background-color: var(--highlight);
+    color: var(--bg-dark);
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 20px;
+    width: 100%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.send-btn:hover {
+    background-color: var(--text-light);
+    transform: scale(1.03);
+}
+.contact-info {
+    background-color: var(--bg-secondary);
+    padding: 30px;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 400px;
+    text-align: left;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    animation: slideUp 1.2s ease;
+}
+.contact-info h2 {
+    color: var(--highlight);
+    margin-bottom: 15px;
+}
+
+.contact-info p {
+    margin: 8px 0;
+    opacity: 0.9;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-content {
+        flex-direction: column;
+        align-items: center;
+    }
+}
