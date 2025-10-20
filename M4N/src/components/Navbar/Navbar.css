@@ -216,10 +216,10 @@ button:hover .arrow:before {
     background: #393e46;
     position: absolute;
     z-index: 1000;
-    width: 90%;
+    width: 100%;
     max-height: 200px;
     overflow-y: auto;
-    margin-top: 294px;
+    margin-top: 260px;
     padding: 0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     font-family: 'Arial', sans-serif;

@@ -38,7 +38,7 @@
   margin-bottom: 15px;
 }
 
-.movie-info h2 {
+.movie-info-h2 {
   margin: 8px 0;
   font-size: 20px;
   line-height: 1.4;
@@ -47,7 +47,7 @@
   border-radius: 6px;
 }
 
-.movie-info p {
+.movie-info-p {
   margin: 8px 0;
   font-size: 18px;
   line-height: 1.4;

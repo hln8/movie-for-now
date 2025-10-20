@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 body{
-    width: 110vw;
+    width: 100%;
     min-height: 100vh;
         background: #222831;
         margin: 0;
@@ -12,7 +12,7 @@ body{
     }
     @media (max-width: 768px){
         body{
-        width: 100vw;
+        width: 100%;
         min-height: 100vh;
         background: #222831;
         margin: 0;

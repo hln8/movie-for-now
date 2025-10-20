@@ -98,12 +98,11 @@ const MovieDetails = () => {
             {isFavorite ? "❤️ Added" : "❤️ Add to Favorites"}
           </button>
 
-          <h2><strong> {movie.overview}</strong></h2>
-          <p><strong>Release Date:</strong> {movie.release_date}</p>
-          <p><strong>Runtime:</strong> {movie.runtime} min</p>
-          <p><strong>Genres:</strong> {movie.genres.map(g => g.name).join(", ")}</p>
-          <p><strong>Rating:</strong> ⭐️ {movie.vote_average.toFixed(1)} ({movie.vote_count} votes)</p>
-
+          <h2 className="movie-info-h2"><strong> {movie.overview}</strong></h2>
+          <p className="movie-info-p"><strong>Release Date:</strong> {movie.release_date}</p>
+          <p className="movie-info-p"><strong>Runtime:</strong> {movie.runtime} min</p>
+          <p className="movie-info-p"><strong>Genres:</strong> {movie.genres.map(g => g.name).join(", ")}</p>
+          <p className="movie-info-p"><strong>Rating:</strong> ⭐️ {movie.vote_average.toFixed(1)} ({movie.vote_count} votes)</p>
 
           <div className="images-plus">
             {images.length > 0 && (
