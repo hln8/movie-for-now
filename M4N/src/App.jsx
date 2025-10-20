@@ -10,25 +10,27 @@ import SignIn from './pages/SignUp-In/SignIn';
 import SignUp from './pages/SignUp-In/SignUp';
 import Favorites from './pages/Favorites/Favorites';
 import ResetPassword from './pages/SignUp-In/reset-password';
+import About from './pages/about/about';
 
 function App() {
-  return (
+return (
     <AuthProvider>
-      <BrowserRouter>
+    <BrowserRouter>
         <Navbar />
         <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path="/movie/:id" element={<MovieDetails />}  />
-          <Route path='/signIn' element={<SignIn />} />
-          <Route path='/signUp' element={<SignUp />} />
-          <Route path='/awards' element={<AwardsPage />} />
-          <Route path='/favorites' element={<Favorites />} />
-          <Route path='*' element={<NotFound />} />
+            <Route path='/' element={<Home />} />
+            <Route path="/movie/:id" element={<MovieDetails />}  />
+            <Route path='/signIn' element={<SignIn />} />
+            <Route path='/signUp' element={<SignUp />} />
+            <Route path='/awards' element={<AwardsPage />} />
+            <Route path='/favorites' element={<Favorites />} />
+            <Route path='*' element={<NotFound />} />
             <Route path="/reset-password" element={<ResetPassword />} />
+            <Route path='/about' element={<About />} />
         </Routes>
         <Footer />
-      </BrowserRouter>
+    </BrowserRouter>
     </AuthProvider>
-  )
+)
 }
 export default App
