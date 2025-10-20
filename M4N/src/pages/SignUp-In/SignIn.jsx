@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import  { useState } from "react";
 import { supabase } from "../../supabaseClient";
 import "./SignIn.css";
 import { useNavigate } from "react-router-dom";
@@ -28,6 +29,10 @@ const SignIn = () => {
     }
 
     const { error } = await supabase.auth.resetPasswordForEmail(resetEmail);
+    const { error } = await supabase.auth.resetPasswordForEmail(resetEmail, {
+      redirectTo: `${window.location.origin}/reset-password`,
+    });
+
     if (error) setMessage(error.message);
 else {
   setMessage("✅ Password reset link sent! Check your email inbox.");
@@ -35,6 +40,12 @@ else {
   setShowResetModal(false);
   setResetEmail("");
 }
+    else {
+      setMessage("✅ Password reset link sent! Check your email inbox.");
+      setTimeout(() => setMessage(""), 4000);
+      setShowResetModal(false);
+      setResetEmail("");
+    }
 
   };
   const handleGoogleSignIn = async () => {
@@ -50,6 +61,7 @@ else {
   return (
     <div className="auth-container">
       <form className="auth-form" onSubmit={handleSubmit}>
+        <h2>Welcome Back </h2>
         <h2>Sign In</h2>
 
         <input
@@ -69,6 +81,7 @@ else {
         />
 
     
+
         <button type="submit" disabled={loading} className={loading ? "loading" : ""}>
           {loading ? "Loading..." : "Sign In"}
         </button>
@@ -78,6 +91,12 @@ else {
     alt="Google Logo"
     className="google-icon"
   />
+        <button type="button" onClick={handleGoogleSignIn} className="google-btn">
+          <img
+            src="https://developers.google.com/identity/images/g-logo.png"
+            alt="Google Logo"
+            className="google-icon"
+          />
           Sign in with Google
         </button>
 

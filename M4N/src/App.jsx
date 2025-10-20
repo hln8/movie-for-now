@@ -9,6 +9,7 @@ import MovieDetails from './pages/MovieDetails/MovieDetails';
 import SignIn from './pages/SignUp-In/SignIn';
 import SignUp from './pages/SignUp-In/SignUp';
 import Favorites from './pages/Favorites/Favorites';
+import ResetPassword from './pages/SignUp-In/reset-password';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path='/awards' element={<AwardsPage />} />
           <Route path='/favorites' element={<Favorites />} />
           <Route path='*' element={<NotFound />} />
+            <Route path="/reset-password" element={<ResetPassword />} />
         </Routes>
         <Footer />
       </BrowserRouter>

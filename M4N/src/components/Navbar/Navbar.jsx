@@ -14,6 +14,8 @@ const Navbar = () => {
     const [loading, setLoading] = useState(false); // Loading state for search
     const [isLoggedIn, setIsLoggedIn] = useState(false); // User authentication state
     const navigate = useNavigate(); // Hook for navigation
+    const [showLogoutModal, setShowLogoutModal] = useState(false);
+
 
     const API_KEY = import.meta.env.VITE_TMDB_API_KEY; // API key from environment variables
 
@@ -52,7 +54,6 @@ const Navbar = () => {
     };
 
     // Handle authentication click (sign in or out)
-    const handleAuthClick = async (e) => {
         e.preventDefault();
         if (isLoggedIn) {
             await supabase.auth.signOut(); // Sign out user
@@ -61,6 +62,14 @@ const Navbar = () => {
             navigate('/signIn'); // Navigate to sign-in page
         }
     };
+const handleAuthClick = (e) => {
+    e.preventDefault();
+    if (isLoggedIn) {
+        setShowLogoutModal(true); // فتح المودال بدل تسجيل الخروج مباشرة
+    } else {
+        navigate('/signIn');
+    }
+};
 
     // Handle user sign-up
     const handleSignUp = async (email, password) => {
@@ -163,6 +172,32 @@ const Navbar = () => {
                     )}
                 </ul>
             </header>
+            {showLogoutModal && (
+    <div className="modal-overlay">
+        <div className="modal">
+            <h3>Are you sure you want to log out?</h3>
+            <div className="modal-buttons">
+                <button
+                    onClick={async () => {
+                        await supabase.auth.signOut();
+                        setIsLoggedIn(false);
+                        setShowLogoutModal(false);
+                        navigate("/");
+                    }}
+                >
+                    Yes
+                </button>
+                <button
+                    onClick={() => setShowLogoutModal(false)}
+                    className="cancel-btn"
+                >
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+)}
+
         </>
     );
 };
