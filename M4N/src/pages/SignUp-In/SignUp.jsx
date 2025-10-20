@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import { useState } from "react";
 import { supabase } from "../../supabaseClient";
 import { useNavigate } from "react-router-dom";
@@ -44,6 +43,7 @@ const SignUp = () => {
     setPassword("");
     setConfirmPassword("");
     setStep(1);
+    navigate("/signIn")
   };
 
   return (
@@ -55,16 +55,16 @@ const SignUp = () => {
         <div className="form-step">
           <h2>Sign Up</h2>
 
-          {step === 1 && (
+          {step === 1 &&  (
             <>
-              <input
+              <input 
                 type="email"
                 placeholder="Enter your email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
               />
-              <button type="submit">Next</button>
+              <button  type="submit">Next</button>
             </>
           )}
 

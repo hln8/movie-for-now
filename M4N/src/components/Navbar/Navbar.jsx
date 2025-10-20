@@ -54,14 +54,6 @@ const Navbar = () => {
     };
 
     // Handle authentication click (sign in or out)
-        e.preventDefault();
-        if (isLoggedIn) {
-            await supabase.auth.signOut(); // Sign out user
-            setIsLoggedIn(false); // Update login state
-        } else {
-            navigate('/signIn'); // Navigate to sign-in page
-        }
-    };
 const handleAuthClick = (e) => {
     e.preventDefault();
     if (isLoggedIn) {

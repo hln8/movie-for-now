@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import  { useState } from "react";
 import { supabase } from "../../supabaseClient";
 import "./SignIn.css";
@@ -28,18 +27,11 @@ const SignIn = () => {
       return;
     }
 
-    const { error } = await supabase.auth.resetPasswordForEmail(resetEmail);
     const { error } = await supabase.auth.resetPasswordForEmail(resetEmail, {
       redirectTo: `${window.location.origin}/reset-password`,
     });
 
     if (error) setMessage(error.message);
-else {
-  setMessage("✅ Password reset link sent! Check your email inbox.");
-  setTimeout(() => setMessage(""), 4000);
-  setShowResetModal(false);
-  setResetEmail("");
-}
     else {
       setMessage("✅ Password reset link sent! Check your email inbox.");
       setTimeout(() => setMessage(""), 4000);
@@ -63,7 +55,6 @@ else {
       <form className="auth-form" onSubmit={handleSubmit}>
         <h2>Welcome Back </h2>
         <h2>Sign In</h2>
-
         <input
           type="email"
           placeholder="Email"
@@ -80,17 +71,10 @@ else {
           required
         />
 
-    
 
         <button type="submit" disabled={loading} className={loading ? "loading" : ""}>
           {loading ? "Loading..." : "Sign In"}
         </button>
-        <button type="button" onClick={handleGoogleSignIn} className="google-btn"> 
-            <img
-    src="https://developers.google.com/identity/images/g-logo.png"
-    alt="Google Logo"
-    className="google-icon"
-  />
         <button type="button" onClick={handleGoogleSignIn} className="google-btn">
           <img
             src="https://developers.google.com/identity/images/g-logo.png"
@@ -101,7 +85,7 @@ else {
         </button>
 
         {message && <p className="auth-message">{message}</p>}
-    <p className="forgot-password-text" onClick={() => setShowResetModal(true)}>
+        <p className="forgot-password-text" onClick={() => setShowResetModal(true)}>
           Forgot your password?
         </p>
         <p className="signup-text">
@@ -114,32 +98,32 @@ else {
       </form>
 
       {showResetModal && (
-  <div className="modal-overlay">
-    <div className="modal">
-      <h3>Reset Your Password</h3>
-      <p>Enter your registered email below and we'll send you a reset link.</p>
+        <div className="modal-overlay">
+          <div className="modal">
+            <h3>Reset Your Password</h3>
+            <p>Enter your registered email below and we'll send you a reset link.</p>
 
-      <input
-        type="email"
-        placeholder="Enter your email"
-        value={resetEmail}
-        onChange={(e) => setResetEmail(e.target.value)}
-      />
+            <input
+              type="email"
+              placeholder="Enter your email"
+              value={resetEmail}
+              onChange={(e) => setResetEmail(e.target.value)}
+            />
 
-      {message && <p className="auth-message">{message}</p>}
+            {message && <p className="auth-message">{message}</p>}
 
-      <div className="modal-buttons">
-        <button onClick={handleResetPassword}>Send Reset Link</button>
-        <button
-          className="cancel-btn"
-          onClick={() => setShowResetModal(false)}
-        >
-          Cancel
-        </button>
-      </div>
-    </div>
-  </div>
-)}
+            <div className="modal-buttons">
+              <button onClick={handleResetPassword}>Send Reset Link</button>
+              <button
+                className="cancel-btn"
+                onClick={() => setShowResetModal(false)}
+              >
+                Cancel
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
     </div>
   );

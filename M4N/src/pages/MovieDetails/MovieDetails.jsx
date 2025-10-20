@@ -29,7 +29,7 @@ const MovieDetails = () => {
     fetch(`https://api.themoviedb.org/3/movie/${id}/credits?api_key=${API_KEY}&language=en-US`)
       .then(res => res.json())
       .then(data => setCast(data.cast));
-
+     //Videos
     fetch(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=${API_KEY}&language=en-US`)
       .then(res => res.json())
       .then(data => {
@@ -67,7 +67,7 @@ const MovieDetails = () => {
     }
   }, [id, user]);
 
-  if (!movie) return <h2 className="lod"> Loading...</h2>;
+  if (!movie) return <h2 className="lod"></h2>;
 
   const handleToggleFavorite = async () => {
     if (!user) {
