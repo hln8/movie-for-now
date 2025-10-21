@@ -68,6 +68,7 @@ function AwardsPage() {
           const nomineeData = {
             title: item.title || "",
             img: item.img || "",
+            tmdb: item.tmdb || null,
             isWinner:
               (typeof item.isWinner === "string" &&
                 item.isWinner.toUpperCase() === "TRUE") ||

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./NomineesList.css";
 
 // Default fallback images
@@ -13,6 +14,7 @@ const API_KEY = import.meta.env.VITE_TMDB_API_KEY; // TMDb API key from environm
 export default function NomineesList({ year, nominees }) {
   const [data, setData] = useState([]); // Holds nominees enriched with images
   const [loadingImages, setLoadingImages] = useState(false); // Show loading state
+  const navigate = useNavigate();
 
   // Fetch actor images from TMDb if missing
   useEffect(() => {
@@ -99,6 +101,11 @@ export default function NomineesList({ year, nominees }) {
                 <div
                   key={i}
                   className={`nominee-card ${nominee.isWinner ? "winner" : ""}`} // Highlight winner
+                  onClick={() => {
+                    if (nominee.tmdb) {
+                      navigate(`/movie/${nominee.tmdb}`);
+                    }
+                  }}
                 >
                   {/* Winner badge */}
                   {nominee.isWinner && 
