@@ -19,3 +19,8 @@ body{
         font-family: 'Arial', sans-serif;
         }
     }
+    @media (max-width: 550px){
+        body{
+            width: 124%;
+        }
+    }
