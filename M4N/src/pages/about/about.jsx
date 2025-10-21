@@ -12,7 +12,7 @@ function About(){
                     <h2 className='section-title'>The Team</h2>
                     <ul className='team-list'>
                         <li>Majd Al-Qadasi</li>
-                        <li>Markb Hajam</li>
+                        <li>Merkeb Hajam</li>
                         <li>Mohammed Al-Wareeth</li>
                         <li>Mohammed Sabor</li>
                         <li>Najie Al-Leswas</li>
