@@ -1,2 +1,44 @@
-# movie-for-now
-This repository contains the source code for m4n, a movie website built with React and powered by the TMDB API to fetch and display movie data.Purpose  The goal of m4n is to deliver a clean, simple, and user-friendly platform to explore movies while practicing React development and working with external APIs.
+# M4N - موقع الأفلام والمسلسلات
+
+مرحبًا بك في M4N، موقع شامل لعرض تفاصيل الأفلام والمسلسلات بطريقة سهلة وجذابة.  
+يتيح لك الموقع البحث عن الأفلام، مشاهدة التقييمات والمعلومات، وحفظ المفضلات بكل سهولة.
+
+---
+
+## نبذة عن المشروع
+تم تطوير M4N ليكون منصة بسيطة وسريعة تساعد المستخدم على:
+- البحث عن أي فيلم.
+- استعراض تفاصيل دقيقة عن العمل (التصنيف، القصة، التقييم، سنة الإصدار...).
+- تسجيل الدخول والخروج بسهولة.
+- إضافة الأعمال المفضلة إلى قائمته الخاصة.
+
+---
+
+## التقنيات المستخدمة
+المشروع مبني باستخدام أحدث التقنيات لتقديم أداء وتجربة مميزة:
+
+| التقنية | الاستخدام |
+|----------|------------|
+| React.js | لبناء واجهة المستخدم |
+| Material UI / CSS | لتصميم الواجهة وتحسين المظهر |
+| Supabase | لإدارة تسجيل الدخول وتخزين بيانات المستخدمين |
+| Vite | لتشغيل المشروع بسرعة أثناء التطوير |
+| TMDB API (اختياري) | لجلب بيانات الأفلام والمسلسلات |
+
+---
+
+## طريقة التشغيل محليًا
+لتجربة المشروع على جهازك، اتبع الخطوات التالية:
+
+```bash
+# 1. استنسخ المشروع
+git clone https://github.com/hln8/movie-for-now.git
+
+# 2. ادخل مجلد المشروع
+cd M4N
+
+# 3. ثبّت الحزم
+npm install
+
+# 4. شغّل المشروع
+npm run dev
