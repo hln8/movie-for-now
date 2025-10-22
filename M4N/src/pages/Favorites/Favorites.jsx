@@ -9,10 +9,12 @@ import './Favorites.css'
 const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
 
 const Favorites = () => {
-  const { user } = useAuth();
+  const { user } = useAuth();  // Get the current user
   const [favorites, setFavorites] = useState([]);
   const [loading, setLoading] = useState(true);
 
+
+  // Fetch user's favorite movies when the user changes
   useEffect(() => {
     if (!user) {
       setFavorites([]);
@@ -22,6 +24,8 @@ const Favorites = () => {
 
     const fetchFavorites = async () => {
       setLoading(true);
+
+      // Fetch favorite movie entries from Supabase
       const { data: favs, error } = await supabase
         .from("favorites")
         .select("*")
@@ -29,35 +33,43 @@ const Favorites = () => {
 
       if (error) console.error("Error fetching favorites:", error.message);
       else {
+
+        // Fetch detailed movie info from TMDB for each favorite
         const detailedFavs = await Promise.all(
           favs.map(async (fav) => {
             const res = await fetch(
               ` https://api.themoviedb.org/3/movie/${fav.movie_id}?api_key=${API_KEY}&language=en-US`
             );
             const movieDetails = await res.json();
+
+            // Add favId from Supabase to each movie object for later use
+
             return { ...movieDetails, favId: fav.id };
           })
         );
-        setFavorites(detailedFavs);
+        setFavorites(detailedFavs);  // Update favorites state with detailed info
       }
       setLoading(false);
     };
 
     fetchFavorites();
-  }, [user]);
+  }, [user]); // Re-run effect when user changes
 
+
+   // Remove a movie from favorites
   const handleRemoveFavorite = async (favId) => {
     const { error } = await supabase
       .from("favorites")
       .delete()
-      .eq("id", favId);
+      .eq("id", favId);  // Delete by favorite ID
 
     if (error) console.error("Error removing favorite:", error.message);
-    else setFavorites(prev => prev.filter(f => f.favId !== favId));
+    else setFavorites(prev => prev.filter(f => f.favId !== favId)); // Remove from state
   };
-
+ 
+    // Conditional rendering based on state
   if (loading)
-    return   <div className="loader">
+    return <div className="loader">
       <div className="loader-dots">
         <div className="loader-dot"></div>
         <div className="loader-dot"></div>
@@ -69,6 +81,8 @@ const Favorites = () => {
   if (favorites.length === 0)
     return <h2 className="fav-message"> No movies added to Your favorites yet</h2>;
 
+
+  // Render favorite movies
   return (
     <div className="favorites-container">
       <h2 className="list-title"> Your Favorites</h2>

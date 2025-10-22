@@ -1,36 +1,41 @@
+
+/* Main container for the auth forms, center content vertically and horizontally */
 .auth-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 100vh; /* Full viewport height */
   background-color: #f3f4f6;
   font-family: Arial, sans-serif;
-  overflow: hidden;
+  overflow: hidden; /* Hide scrollbars */
 }
 
-
+/* Animation classes for sliding form between steps */
 .shift-left {
-  animation: slideToLeft 0.5s forwards;
+  animation: slideToLeft 0.5s forwards; /* Slide animation to left */
 }
 
 .shift-right {
-  animation: slideToRight 0.5s forwards;
+  animation: slideToRight 0.5s forwards; /* Slide animation to right */
 }
 
+
+/* Keyframes for sliding to left */
 @keyframes slideToLeft {
   0% {
-    transform: translateX(100%);
-    opacity: 0;
+    transform: translateX(100%); /* Start off-screen to the right */
+    opacity: 0;  /* Start invisible */
   }
   100% {
-    transform: translateX(0);
-    opacity: 1;
+    transform: translateX(0); /* Move to original position */
+    opacity: 1;  /* Fully visible */
   }
 }
 
+/* Keyframes for sliding to right */
 @keyframes slideToRight {
   0% {
-    transform: translateX(-100%);
+    transform: translateX(-100%); /* Start off-screen to the left */
     opacity: 0;
   }
   100% {
@@ -38,13 +43,13 @@
     opacity: 1;
   }
 }
-
+/* Headings inside the form */
 .auth-form h2 {
   text-align: center;
   color: #DFD0B8;
   margin-bottom: 20px;
 }
-
+/* Input fields styling */
 .auth-form input {
   width: 106%;
   padding: 12px;
@@ -55,11 +60,12 @@
 }
 
 
-
+/* Button hover effect */
 .auth-form button:hover {
   background-color: #f0f0f0;
 }
 
+/* Email preview in step 2 */
 .email-preview {
   margin-bottom: 15px;
   border-radius: 8px;
@@ -68,6 +74,7 @@
   font-size: 20px;
 }
 
+/* Back button styling */
 .back-btn {
   background: transparent;
   font-size: 14px;
@@ -76,18 +83,20 @@
   margin-top: 5px ;
 }
 
+/* Back button hover effect */
 .back-btn:hover {
   color: #000000;
   text-decoration: underline;
 }
 
-
+/* Container for switch to sign-in text */
 .switch-auth {
   text-align: center;
   font-size: 14px;
   margin-top: 15px;
 }
 
+/* Link styling inside switch-auth */
 .switch-auth .link {
   cursor: pointer;
   text-decoration: underline;

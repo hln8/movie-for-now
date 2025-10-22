@@ -1,20 +1,23 @@
+/* Main container for favorites page */
 .favorites-container{
   background-color: #393e46;
-  padding-bottom: 350px;
+  padding-bottom: 350px; /* Extra space at the bottom */
 }
 
-
+/* Buttons inside the list of cards */
 .list-cards button{
-    transition: all 0.3s ease;
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
     cursor: pointer;
     padding: 10px;
     margin: 1px   auto;
-    transition: all 0.3s ease;
 }
+
+/* Hover effect for buttons */
 .list-cards button:hover{
-  transform: scale(1.2);
+  transform: scale(1.2); /* Grow the button slightly */
   background-color:#8d1d01;
 }
+/* Message displayed when no favorites or user not logged in */
 .fav-message {
   background-color: #393e46;
   text-align: center;
@@ -22,8 +25,10 @@
   font-size: 120px;
  
 }
+
+/* Loader overlay when fetching data */
 .loader {
-  position: fixed;
+  position: fixed; /* Stay on top of all content */
   top: 0;
   left: 0;
   width: 100%;
@@ -31,23 +36,26 @@
   background-color: #393e46;
   display: flex;
   align-items: center;
-  justify-content: center;
-  z-index: 10000;
+  justify-content: center; /* Center the loader */
+  z-index: 10000; /* On top of everything */
 }
 
+/* Container for loader dots */
 .loader-dots {
   display: flex;
-  gap: 12px;
+  gap: 12px; /* Space between dots */
 }
 
+/* Each dot of the loader */
 .loader-dot {
   width: 16px;
   height: 16px;
-  background-color: #edf0f1;
-  border-radius: 50%;
-  animation: bounce 0.6s infinite alternate;
+  background-color: #edf0f1;  /* Light color for contrast */
+  border-radius: 50%; /* Make it circular */
+  animation: bounce 0.6s infinite alternate; /* Bounce animation */
 }
 
+/* Stagger animation for second and third dots */
 .loader-dot:nth-child(2) {
   animation-delay: 0.2s;
 }
@@ -56,16 +64,18 @@
   animation-delay: 0.4s;
 }
 
+/* Keyframes for bounce animation */
 @keyframes bounce {
   0% {
-    transform: translateY(0);
-    opacity: 0.7;
+    transform: translateY(0); /* Start at original position */
+    opacity: 0.7;  /* Slightly transparent */
   }
   100% {
-    transform: translateY(-15px);
-    opacity: 1;
+    transform: translateY(-15px); /* Move up */
+    opacity: 1; /* Fully visible */
   }
 }
+/* Responsive styling for smaller screens */
 @media (max-width: 900px){
   .fav-message{
     font-size: 40px;

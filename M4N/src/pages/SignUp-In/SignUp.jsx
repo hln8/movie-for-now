@@ -4,13 +4,16 @@ import { useNavigate } from "react-router-dom";
 import "./SignUp.css";
 
 const SignUp = () => {
-  const [step, setStep] = useState(1);
+  const [step, setStep] = useState(1);   // State to manage the current step of the signup form (1 or 2)
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const [message, setMessage] = useState("");
+  const [message, setMessage] = useState("");   // State to display messages (errors or success)
   const navigate = useNavigate();
 
+
+
+  // Handler for moving from step 1 to step 2
   const handleNext = (e) => {
     e.preventDefault();
     if (!email) {
@@ -23,6 +26,7 @@ const SignUp = () => {
 
   const handleBack = () => setStep(1);
 
+  // Handler for completing signup
   const handleSignUp = async (e) => {
     e.preventDefault();
 
@@ -30,14 +34,14 @@ const SignUp = () => {
       setMessage("Passwords do not match!");
       return;
     }
-
+    // Call Supabase to sign up the user
     const { error } = await supabase.auth.signUp({ email, password });
 
     if (error) {
       setMessage(error.message);
       return;
     }
-
+    // Show success message and reset form
     setMessage("✅ Check your email to confirm signup!");
     setEmail("");
     setPassword("");
@@ -55,16 +59,16 @@ const SignUp = () => {
         <div className="form-step">
           <h2>Sign Up</h2>
 
-          {step === 1 &&  (
+          {step === 1 && (
             <>
-              <input 
+              <input
                 type="email"
                 placeholder="Enter your email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
               />
-              <button  type="submit">Next</button>
+              <button type="submit">Next</button>
             </>
           )}
 
